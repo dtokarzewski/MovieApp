@@ -32,6 +32,8 @@ dependencies {
     implementation lib_google.material
     implementation lib_hilt.android
     kapt lib_hilt.compiler
+    implementation lib_rxJava3.rxJava
+    implementation lib_rxJava3.rxAndroid
 
     testImplementation lib_junit
     androidTestImplementation lib_androidx.junit
