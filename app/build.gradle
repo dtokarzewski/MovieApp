@@ -54,6 +54,7 @@ android {
 
 dependencies {
     implementation project(':core')
+    implementation project(':base')
     implementation project(':featureMovies')
     implementation project(':featureMovieDetails')
 
@@ -63,6 +64,7 @@ dependencies {
     implementation lib_google.material
     implementation lib_hilt.android
     kapt lib_hilt.compiler
+    implementation lib_timber
 
     testImplementation lib_junit
     androidTestImplementation lib_androidx.junit
