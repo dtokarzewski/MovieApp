@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'dagger.hilt.android.plugin'
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
@@ -13,39 +14,57 @@ android {
         minSdkVersion buildConfig.minSdk
         targetSdkVersion buildConfig.targetSdk
         versionCode 1
-        versionName "1.0"
+        versionName "0.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
     buildTypes {
+        debug {
+            versionNameSuffix "-debug"
+            applicationIdSuffix ".debug"
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
 
-    ext.hilt_version = '2.35.1'
-
 }
 
 dependencies {
+    implementation project(':core')
+    implementation project(':featureMovies')
+    implementation project(':featureMovieDetails')
 
-    implementation kotlinLibs.stdLib
-    implementation androidx.coreKtx
-    implementation androidx.appCompat
-    implementation google.material
-    implementation hilt.android
-    annotationProcessor hilt.compiler
+    implementation lib_kotlin.stdLib
+    implementation lib_androidx.coreKtx
+    implementation lib_androidx.appCompat
+    implementation lib_google.material
+    implementation lib_hilt.android
+    kapt lib_hilt.compiler
 
-    testImplementation junit
-    androidTestImplementation androidx.junit
-    androidTestImplementation androidx.espressoCore
+    testImplementation lib_junit
+    androidTestImplementation lib_androidx.junit
+    androidTestImplementation lib_androidx.espressoCore
 }

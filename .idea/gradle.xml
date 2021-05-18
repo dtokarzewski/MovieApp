@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/featureMovieDetails" />
+            <option value="$PROJECT_DIR$/featureMovies" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

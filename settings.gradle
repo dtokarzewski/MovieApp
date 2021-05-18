@@ -1,3 +1,5 @@
 include ':app'
 rootProject.name = "Movie app"
 include ':core'
+include ':featureMovies'
+include ':featureMovieDetails'

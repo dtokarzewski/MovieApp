@@ -2,6 +2,10 @@
 buildscript {
     apply from: 'libraries.gradle'
     ext {
+
+
+        versions.kotlin = '1.5.0'
+        versions.kotlin = '1.5.0'
         versions.kotlin = '1.5.0'
     }
 
@@ -17,9 +21,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath android.gradlePlugin
-        classpath kotlinLibs.gradlePlugin
-        classpath hilt.gradlePlugin
+        classpath lib_android.gradlePlugin
+        classpath lib_kotlin.gradlePlugin
+        classpath lib_hilt.gradlePlugin
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

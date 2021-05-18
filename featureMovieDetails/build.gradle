@@ -23,6 +23,7 @@ android {
 }
 
 dependencies {
+    implementation project(':core')
 
     implementation lib_kotlin.stdLib
     implementation lib_androidx.coreKtx
