@@ -2,8 +2,9 @@ package dev.wellcoded.myapplication.util
 
 import dev.wellcoded.base.util.Logger
 import timber.log.Timber
+import javax.inject.Inject
 
-class TimberLogger : Logger {
+class TimberLogger @Inject constructor() : Logger {
 
     override fun init(isDebug: Boolean) {
         if (isDebug) {

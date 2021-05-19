@@ -32,6 +32,8 @@ dependencies {
     implementation lib_kotlin.stdLib
     implementation lib_androidx.coreKtx
     implementation lib_androidx.appCompat
+    implementation lib_androidx.fragmentKtx
+    implementation lib_androidx.recyclerView
     implementation lib_google.material
     implementation lib_hilt.android
     kapt lib_hilt.compiler

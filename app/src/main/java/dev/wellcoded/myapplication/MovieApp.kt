@@ -8,4 +8,9 @@ import javax.inject.Inject
 @HiltAndroidApp
 class MovieApp : Application() {
     @Inject lateinit var initializers: Set<@JvmSuppressWildcards Initializer>
+
+    override fun onCreate() {
+        super.onCreate()
+        initializers.forEach { it.init(this) }
+    }
 }
